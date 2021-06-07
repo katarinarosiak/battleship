@@ -1,0 +1,15 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "For the code challege we are going to create a simple version of the game 'Battleship'.",
+  "main": "battleship.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^27.0.4",
+    "readline-sync": "^1.4.10"
+  }
+}
