@@ -30,7 +30,7 @@ class Ship {
       if (square.coordinate.toString() === coordinate.toString()) {
         square.markHit();
       }
-    })
+    });
   }
 
   isSunk() {
@@ -58,16 +58,16 @@ class Board {
   }
 
   shoot(coordinate) {
-    for (let i = 0; i < this.ships.length; i++) {
-      let ship = this.ships[i];
+    for (let idx = 0; idx < this.ships.length; idx++) {
+      let ship = this.ships[idx];
       if (ship.hasCoordinate(coordinate)) {
-        ship.hit(coordinate)
+        ship.hit(coordinate);
         let sunk = ship.isSunk();
         if (sunk) {
           return { status: "sunk", name: ship.getName() };
         } else {
           return { status: "hit" };
-        };
+        }
       }
     }
 
@@ -92,7 +92,7 @@ class Game {
 
   play() {
     while (true) {
-      console.log("Shoot!")
+      console.log("Shoot!");
       let coordX = readline.question('Give X coordinate:\n');
       let coordY = readline.question('Give Y coordinate:\n');
       let message = this.board.shoot([Number(coordX), Number(coordY)]);
@@ -105,31 +105,7 @@ class Game {
   }
 }
 
-let game = new Game;
+let game = new Game();
 game.play();
-
-
-
-
-// -----00000
-// ----000000
-// ---0000000
-// ---0000000
-// --00000000
-
-
-
-
-
-
-// class Player {
-//   constructor() {
-//     // pastShots
-//   }
-
-//   shoot(board, coordinate) {
-//     board.shoot(coordinate)
-//   }
-// }
 
 module.exports = { Square, Ship, Board };
