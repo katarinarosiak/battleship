@@ -11,7 +11,7 @@ describe("Square", () => {
     let square = new Square([1, 2]);
     expect(square.getCoordinate()).toEqual([1, 2]);
   });
-})
+});
 
 describe("Ship", () => {
   test('If a square exists with the coordinate for that Ship, return true', () => {
@@ -23,7 +23,7 @@ describe("Ship", () => {
     let carrier = new Ship("carrier", [new Square([0, 0]), new Square([0, 1]), new Square([0, 2]), new Square([0, 3], new Square([0, 4]))]);
     expect(carrier.hasCoordinate([5, 0])).toEqual(false);
   });
-})
+});
 
 describe("Board", () => {
   test('Given a board, if I shoot at a coordinate with no ship return miss', () => {
@@ -35,7 +35,7 @@ describe("Board", () => {
     let board = new Board([carrier, battleship, cruiser, submarine, destroyer]);
 
     expect(board.shoot([9, 9])).toEqual({ status: "miss" });
-  })
+  });
 
   test('Given a board, if I shoot at a coordinate with ship return hit', () => {
     let carrier = new Ship("carrier", [new Square([0, 0]), new Square([0, 1]), new Square([0, 2]), new Square([0, 3], new Square([0, 4]))]);
@@ -46,7 +46,7 @@ describe("Board", () => {
     let board = new Board([carrier, battleship, cruiser, submarine, destroyer]);
 
     expect(board.shoot([0, 0])).toEqual({ status: "hit" });
-  })
+  });
 
   test('Given that I shot all sqaures for a ship, return sunk', () => {
     let carrier = new Ship("carrier", [new Square([0, 0]), new Square([0, 1]), new Square([0, 2]), new Square([0, 3], new Square([0, 4]))]);
@@ -59,5 +59,5 @@ describe("Board", () => {
     board.shoot([4, 0]);
     board.shoot([4, 1]);
     expect(board.shoot([4, 2])).toEqual({ status: "sunk", name: "destroyer" });
-  })
+  });
 });
