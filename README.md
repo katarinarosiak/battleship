@@ -1,4 +1,10 @@
 
+Pair Coding Exercise. 
+
+
+Rules: 
+
+
 For the code challege we are going to create a simple version of the game 'Battleship'.
 
 For our version, there will only be one grid, 10x10. As the programmers, you will be placing the 'ships' in a manner of your choosing (predetermined, random, etc) and the player will input coordinates as a guess.
